@@ -1,0 +1,58 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="project-image">
+        <div class="view hm-zoom z-depth-2" style="cursor: pointer">
+          <img [src]="project.projectImageUrl" [alt]="project.projectName" width="100%" class="img-fluid rounded">
+        </div>
+        <div class="" style="margin-top:15px">
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Project Price</h6>
+              </div>
+              <span class="text-muted" style="color:crimson !important">₹ {{project.projectPrice}}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Project Seller</h6>
+              </div>
+              <span class="text-muted" style="color:crimson !important">{{project.projectSeller}}</span>
+            </li>
+          </ul>
+          <button class="btn btn-primary" (click)="addToCart(project)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="project-detail">
+        <h5 class="project-head">Project Details</h5>
+        <table class="table" cellspacing="0" style="max-height: 28px">
+          <tbody>
+            <tr>
+              <th scope="row">Project Name</th>
+              <td>{{project.projectName}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Project Description</th>
+              <td>{{project.projectDescription}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Project Category</th>
+              <td>{{project.projectCategory}}</td>
+            </tr>
+            <tr>
+              <th scope="row">No. of quantity available</th>
+              <td>{{project.projectQuatity}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Project Added on</th>
+              <td>{{project.projectAdded * 1000 | date}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

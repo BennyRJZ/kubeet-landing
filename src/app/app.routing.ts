@@ -16,6 +16,10 @@ export const AppRoutes: Routes = [
 				loadChildren: './layouts/product/product.module#ProductModule'
 			},
 			{
+				path: 'projects',
+				loadChildren: './layouts/project/project.module#ProjectModule'
+			},
+			{
 				path: 'users',
 				loadChildren: './layouts/user/user.module#UserModule'
 			},
@@ -28,3 +32,4 @@ export const AppRoutes: Routes = [
 	{ path: 'no-access', component: NoAccessComponent },
 	{ path: '**', component: PageNotFoundComponent }
 ];
+ 
