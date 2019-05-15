@@ -14,6 +14,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NgxSoapModule } from 'ngx-soap';
 import { ProjectService } from './shared/services/project.service';
+import { StorageService } from './shared/services/storage.service';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 /* to load and set en.json as the default application language */
 export function setupTranslateFactory(service: TranslateService): Function {
@@ -37,6 +40,8 @@ export function setupTranslateFactory(service: TranslateService): Function {
 	providers: [
 		TranslateService,
 		ProjectService,
+		StorageService,
+		AngularFireStorage,
 		{
 			provide: APP_INITIALIZER,
 			useFactory: setupTranslateFactory,

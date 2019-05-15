@@ -1,0 +1,40 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <!-- Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Add Project</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+
+            <!-- Body -->
+            <div class="modal-body">
+                <form class="needs-validation" #addFileForm="ngForm" (ngSubmit)="uploadFile(addFileForm)">
+                    <!-- Concept Title & Category -->
+
+
+                    <!-- Concept File -->
+                    <div class="mb-3">
+                        <label for="projectFile">ProjectFile File
+              </label>
+                        <br/>
+                        <input class="file-input" type="file" (change)="countFiles($event)">
+                        <span class="file-cta">
+                Choose a file...
+              </span>
+                        <br/>
+
+                    </div>
+
+                    <hr class="mb-4">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Add File</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

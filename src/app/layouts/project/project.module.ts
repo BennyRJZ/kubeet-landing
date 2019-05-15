@@ -15,6 +15,7 @@ import { ProjectListComponent } from "./project-list/project-list.component";
 import { AddProjectComponent } from "./add-project/add-project.component";
 import { ProjectDetailComponent } from "./project-detail/project-detail.component";
 import { SharedModule } from "../../shared/shared.module";
+import { AddStorageComponent } from './add-storage/add-storage.component';
 // import { FavouriteProjectsComponent } from "./favourite-projects/favourite-projects.component";
 // import { CartProjectsComponent } from "./cart-projects/cart-projects.component";
 // import { CartCalculatorComponent } from "./cart-calculator/cart-calculator.component";
@@ -27,6 +28,7 @@ import { SharedModule } from "../../shared/shared.module";
 		ProjectListComponent,
 		AddProjectComponent,
 		ProjectDetailComponent,
+		AddStorageComponent,
 		// FavouriteProjectsComponent,
 		// CartProjectsComponent,
 		// CartCalculatorComponent
