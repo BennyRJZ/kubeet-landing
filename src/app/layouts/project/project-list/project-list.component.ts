@@ -13,7 +13,7 @@ export class ProjectListComponent implements OnInit {
 	projectObject: Project;
 
 	loading = false;
-	brands = ['All', 'Google', 'Apple', 'Realme', 'Nokia', 'Motorolla'];
+	brands = ['All', 'Programación', 'Algoritmos', 'Test'];
 
 	selectedBrand: 'All';
 

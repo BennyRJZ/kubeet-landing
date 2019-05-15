@@ -5,4 +5,5 @@ export class Project {
     team: string;
     startDate: Date;
     deadline: Date;
+    category: string;
   }
