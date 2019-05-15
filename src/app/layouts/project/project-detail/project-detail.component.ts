@@ -1,54 +1,54 @@
-import { Product } from '../../../shared/models/product';
+import { Project } from '../../../shared/models/project';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductService } from '../../../shared/services/product.service';
+import { ProjectService } from '../../../shared/services/project.service';
 import { ToastrService } from 'src/app/shared/services/toastr.service';
 @Component({
-	selector: 'app-product-detail',
-	templateUrl: './product-detail.component.html',
-	styleUrls: [ './product-detail.component.scss' ]
+	selector: 'app-project-detail',
+	templateUrl: './project-detail.component.html',
+	styleUrls: [ './project-detail.component.scss' ]
 })
-export class ProductDetailComponent implements OnInit, OnDestroy {
+export class ProjectDetailComponent implements OnInit, OnDestroy {
 	private sub: any;
-	product: Product;
+	project: Project;
 
 	constructor(
 		private route: ActivatedRoute,
-		private productService: ProductService,
+		private projectService: ProjectService,
 		private toastrService: ToastrService
 	) {
-		this.product = new Product();
+		this.project = new Project();
 	}
 
 	ngOnInit() {
 		this.sub = this.route.params.subscribe((params) => {
 			const id = params['id']; // (+) converts string 'id' to a number
-			this.getProductDetail(id);
+			this.getProjectDetail(id);
 		});
 	}
 
-	getProductDetail(id: string) {
+	getProjectDetail(id: string) {
 		// this.spinnerService.show();
-		const x = this.productService.getProductById(id);
+		const x = this.projectService.getProjectById(id);
 		console.log("id " + id);
 		x.snapshotChanges().subscribe(
-			(product) => {
-				console.log("product" + product)
+			(project) => {
+				console.log("project" + project)
 				// this.spinnerService.hide();
-				//const y = product.payload.data() as Product;
-				this.product = product.payload.data();
+				//const y = project.payload.data() as Project;
+				this.project = project.payload.data();
 
 				//y['$key'] = id;
-				//this.product = y;
+				//this.project = y;
 			},
 			(error) => {
-				this.toastrService.error('Error while fetching Product Detail', error);
+				this.toastrService.error('Error while fetching Project Detail', error);
 			}
 		);
 	}
 
-	addToCart(product: Product) {
-		this.productService.addToCart(product);
+	addToCart(project: Project) {
+		this.projectService.addToCart(project);
 	}
 
 	ngOnDestroy() {
