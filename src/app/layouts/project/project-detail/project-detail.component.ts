@@ -47,9 +47,9 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
 		);
 	}
 
-	addToCart(project: Project) {
+	/* addToCart(project: Project) {
 		this.projectService.addToCart(project);
-	}
+	} */
 
 	ngOnDestroy() {
 		this.sub.unsubscribe();

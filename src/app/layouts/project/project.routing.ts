@@ -9,10 +9,10 @@ export const ProjectRoutes: Routes = [
 	{
 		path: 'projects',
 		children: [
-			{
-				path: '',
-				component: IndexComponent
-			},
+			// {
+			// 	path: '',
+			// 	component: IndexComponent
+			// },
 			{
 				path: 'all-projects',
 				component: ProjectListComponent
@@ -25,10 +25,10 @@ export const ProjectRoutes: Routes = [
 				path: 'cart-items',
 				component: CartProjectsComponent
 			}, */
-			{
+			/* {
 				path: 'checkouts',
 				loadChildren: './checkout/checkout.module#CheckoutModule'
-			},
+			}, */
 			{
 				path: 'project/:id',
 				component: ProjectDetailComponent

@@ -3,7 +3,6 @@ export class Project {
     projectID: number;
     projectName: string;
     team: string;
-    //startDate: timestamp;
-    //deadline: timeStamp;
-
+    startDate: Date;
+    deadline: Date;
   }
