@@ -1,3 +1,4 @@
+import * as firebase from 'firebase/app';
 export const FireBaseConfig = {
 /*  apiKey: "<YOUR_API_KEY>",
   authDomain: "<YOUR_AUTH_DOMAIN>",
@@ -6,11 +7,12 @@ export const FireBaseConfig = {
   storageBucket: "<YOUR_STORAGE_BUCKETS>",
   messagingSenderId: "<YOUR_MESSAGING_SENDER_ID>"
 */
-apiKey: "AIzaSyCJb2sA2Oi_M09kZhb3tfHlKy_t8PVKcS0",
-authDomain: "kubeet.firebaseapp.com",
-databaseURL: "https://kubeet.firebaseio.com",
-projectId: "kubeet",
-storageBucket: "kubeet.appspot.com",
-messagingSenderId: "348687452553"
-
+firebase: {
+  apiKey: "AIzaSyCJb2sA2Oi_M09kZhb3tfHlKy_t8PVKcS0",
+  authDomain: "kubeet.firebaseapp.com",
+  databaseURL: "https://kubeet.firebaseio.com",
+  projectId: "kubeet",
+  storageBucket: "kubeet.appspot.com",
+  messagingSenderId: "348687452553"
+}
 };
