@@ -9,10 +9,10 @@ export const ProjectRoutes: Routes = [
 	{
 		path: 'projects',
 		children: [
-			// {
-			// 	path: '',
-			// 	component: IndexComponent
-			// },
+			{
+				path: '',
+				component: IndexComponent
+			},
 			{
 				path: 'all-projects',
 				component: ProjectListComponent

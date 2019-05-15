@@ -46,7 +46,7 @@ export class BestProductComponent implements OnInit {
 			(product) => {
 				this.loading = false;
 				this.bestProducts = [];
-				for (let i = 0; i < 5; i++) {
+				for (let i = 0; i < 3; i++) {
 					//product[i].payload.doc.data
 					//const y = product[i].payload.doc.data() as Product;
 					//y['$key'] = product[i].payload.doc.data().$key;

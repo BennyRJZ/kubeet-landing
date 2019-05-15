@@ -8,10 +8,12 @@ import { RouterModule } from '@angular/router';
 import { AppRoutes } from './app.routing';
 import { TranslateService } from './shared/services/translate.service';
 import { ProductModule } from './layouts/product/product.module';
+import { ProjectModule } from './layouts/project/project.module';
 import { UserModule } from './layouts/user/user.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NgxSoapModule } from 'ngx-soap';
+import { ProjectService } from './shared/services/project.service';
 
 /* to load and set en.json as the default application language */
 export function setupTranslateFactory(service: TranslateService): Function {
@@ -26,6 +28,7 @@ export function setupTranslateFactory(service: TranslateService): Function {
 		BrowserAnimationsModule,
 		IndexModule,
 		ProductModule,
+		ProjectModule,
 		UserModule,
 		SharedModule,
 		RouterModule.forRoot(AppRoutes),
@@ -33,7 +36,7 @@ export function setupTranslateFactory(service: TranslateService): Function {
 	],
 	providers: [
 		TranslateService,
-		
+		ProjectService,
 		{
 			provide: APP_INITIALIZER,
 			useFactory: setupTranslateFactory,
