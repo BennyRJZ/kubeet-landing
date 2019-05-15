@@ -47,9 +47,9 @@
                                     <!--Card content-->
                                     <div class="card-body text-center no-padding">
                                         <!--Category & Title-->
-                                        <a class="text-muted">
+                                        <!-- <a class="text-muted">
                                             <h5>{{ project.projectID }}</h5>
-                                        </a>
+                                        </a> -->
                                         <p class="card-title">
                                             <strong>
                         <a [routerLink]="['/projects/project', project.$key]" routerLinkActive="router-link-active">{{
@@ -61,14 +61,8 @@
                                         </p>
                                         <!--Card footer-->
                                         <div class="card-footer">
-                                            <span class="left">$ <!-- {{ project.projectPrice }} --></span>
-                                            <span class="right">
-                        <a placement="top" mdbTooltip="Add to Wishlist" container="body" (click)="addFavourite(project)">
-                          <i class="fa fa-heart"></i>
-                        </a>
-                        <a placement="top" mdbTooltip="Add to Cart" container="body" (click)="addToCart(project)">
-                          <i class="fa fa-shopping-cart"></i>
-                        </a>
+                                            <span class="center">
+                    
                         <a placement="top" mdbTooltip="Remove Project" container="body" *ngIf="authService.isAdmin()"
                           (click)="removeProject(project.$key)">
                           <i class="fa fa-trash"></i>
@@ -95,4 +89,4 @@
         </div>
     </div>
 </div>
-<!-- <app-add-project></app-add-project> -->
+<app-add-project></app-add-project>

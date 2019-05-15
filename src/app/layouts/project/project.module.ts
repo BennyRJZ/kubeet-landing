@@ -12,7 +12,7 @@ import { ProjectRoutes } from "./project.routing";
 import { ProjectComponent } from "./project.component";
 // import { BestProjectComponent } from "./best-project/best-project.component";
 import { ProjectListComponent } from "./project-list/project-list.component";
-// import { AddProjectComponent } from "./add-project/add-project.component";
+import { AddProjectComponent } from "./add-project/add-project.component";
 import { ProjectDetailComponent } from "./project-detail/project-detail.component";
 import { SharedModule } from "../../shared/shared.module";
 // import { FavouriteProjectsComponent } from "./favourite-projects/favourite-projects.component";
@@ -25,7 +25,7 @@ import { SharedModule } from "../../shared/shared.module";
 		ProjectComponent,
 		// BestProjectComponent,
 		ProjectListComponent,
-		// AddProjectComponent,
+		AddProjectComponent,
 		ProjectDetailComponent,
 		// FavouriteProjectsComponent,
 		// CartProjectsComponent,

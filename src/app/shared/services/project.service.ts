@@ -10,7 +10,7 @@ import { ToastrService } from './toastr.service';
 export class ProjectService {
 	//projects: AngularFireList<Project>;
 	//project: AngularFireObject<Project>;
-    projects: AngularFirestoreCollection<Project>;
+  projects: AngularFirestoreCollection<Project>;
 	project:  AngularFirestoreDocument<Project>;
 
 	// favouriteProjects
@@ -56,7 +56,7 @@ export class ProjectService {
 	}
 
 	deleteProject(key: string) {
-	//	this.projects.remove(key);
+		this.db.collection('projects').doc(key).delete();
 	}
 
 	/*

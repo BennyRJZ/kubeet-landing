@@ -1,9 +1,8 @@
 export class Project {
     $key: string;
-    projectID: number;
+    projectID: string;
     projectName: string;
-    team: string;
     startDate: Date;
-    deadline: Date;
+    deadLine: Date;
     category: string;
   }
