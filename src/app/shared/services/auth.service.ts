@@ -106,4 +106,19 @@ export class AuthService {
       new firebase.auth.GoogleAuthProvider()
     );
   }
+
+  doFacebookLogin(){
+    return new Promise<any>((resolve, reject) => {
+      let provider = new firebase.auth.FacebookAuthProvider();
+      this.firebaseAuth.auth
+      .signInWithPopup(provider)
+      .then(res => {
+        resolve(res);
+      }, err => {
+        console.log(err);
+        reject(err);
+      })
+    })
+ }
+ 
 }
