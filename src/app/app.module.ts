@@ -19,6 +19,7 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { FireBaseConfig } from "../environments/firebaseConfig";
 import * as firebase from 'firebase/app';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 
 /* to load and set en.json as the default application language */
@@ -41,11 +42,12 @@ imports: [
  ServiceWorkerModule.register("ngsw-worker.js", { enabled: environment.production }),
  AngularFireModule.initializeApp(FireBaseConfig.firebase),
  AngularFirestoreModule,
- AngularFireAuthModule
+ AngularFireAuthModule,
  ],
 providers: [
 TranslateService,
 ProjectService,
+AngularFireStorage,
  {
   provide: APP_INITIALIZER,
   useFactory: setupTranslateFactory,
