@@ -5,4 +5,6 @@ export class Project {
     startDate: Date;
     deadLine: Date;
     category: string;
+    files: Array<string>;
+    team: string;
   }

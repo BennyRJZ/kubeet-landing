@@ -51,8 +51,8 @@ export class ProjectService {
 		return this.project;
 	}
 
-	updateProject(data: Project) {
-	//	this.projects.update(data.$key, data);
+	updateProject(key: string ,data:Project) {
+	this.db.collection('projects').doc(key).set(data);
 	}
 
 	deleteProject(key: string) {

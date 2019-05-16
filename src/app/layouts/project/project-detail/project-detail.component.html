@@ -1,5 +1,14 @@
 <br>
 <div class="container">
+    <div class="row" *ngIf="authService.isAdmin()">
+        <div class="col-sm">
+            <div class="float-right">
+                <button type="button" class="btn btn-primary waves-light" data-toggle="modal" data-target="#exampleModalLong">
+                  Add Files
+                </button>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-sm-4">
             <div class="project-image">
@@ -21,7 +30,6 @@
                             <span class="text-muted" style="color:crimson !important">{{project.projectSeller}}</span>
                         </li>
                     </ul>
-                    <button class="btn btn-primary" (click)="addToCart(project)">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -39,9 +47,10 @@
                             <td>{{project.category}}</td>
                         </tr>
                         <tr>
-                            <th scope="row">ProjectID</th>
+                            <th scope="row">Project ID</th>
                             <td>{{project.projectID}}</td>
                         </tr>
+
                         <!-- <tr>
               <th scope="row">Project Category</th>
               <td>{{project.projectCategory}}</td>
@@ -60,3 +69,4 @@
         </div>
     </div>
 </div>
+<app-add-storage [key]=key></app-add-storage>

@@ -3,6 +3,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProjectService } from '../../../shared/services/project.service';
 import { ToastrService } from 'src/app/shared/services/toastr.service';
+import { AuthService } from '../../../shared/services/auth.service';
 @Component({
 	selector: 'app-project-detail',
 	templateUrl: './project-detail.component.html',
@@ -10,12 +11,14 @@ import { ToastrService } from 'src/app/shared/services/toastr.service';
 })
 export class ProjectDetailComponent implements OnInit, OnDestroy {
 	private sub: any;
+	public key: string;
 	project: Project;
 
 	constructor(
 		private route: ActivatedRoute,
 		private projectService: ProjectService,
-		private toastrService: ToastrService
+		private toastrService: ToastrService,
+		public authService: AuthService,
 	) {
 		this.project = new Project();
 	}
@@ -23,6 +26,7 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.sub = this.route.params.subscribe((params) => {
 			const id = params['id']; // (+) converts string 'id' to a number
+			this.key = params['id'];
 			this.getProjectDetail(id);
 		});
 	}
@@ -37,7 +41,6 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
 				// this.spinnerService.hide();
 				//const y = project.payload.data() as Project;
 				this.project = project.payload.data();
-
 				//y['$key'] = id;
 				//this.project = y;
 			},
