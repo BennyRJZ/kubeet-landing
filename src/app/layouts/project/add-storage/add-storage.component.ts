@@ -6,6 +6,7 @@ import { Project } from '../../../shared/models/project';
 import { ProjectDetailComponent } from '../project-detail/project-detail.component';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { ToastrService } from '../../../shared/services/toastr.service';
 
 @Component({
   selector: 'app-add-storage',
@@ -20,7 +21,11 @@ export class AddStorageComponent implements OnInit {
   arrayF = [];
   project: Project; 
 
-  constructor( private storageService: StorageService, private projectService: ProjectService, private angularFireStorage: AngularFireStorage) {}
+  constructor( 
+    private storageService: StorageService,
+    private projectService: ProjectService,
+    private angularFireStorage: AngularFireStorage,
+    private toastrService: ToastrService) {}
 
   ngOnInit() {
     this.getProjectDetail(this.key);
