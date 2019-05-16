@@ -19,15 +19,17 @@
                     <ul class="list-group mb-3">
                         <li class="list-group-item d-flex justify-content-between lh-condensed">
                             <div>
-                                <h6 class="my-0">Project Price</h6>
+                                <h6 class="my-0">Start Date:</h6>
                             </div>
-                            <span class="text-muted" style="color:crimson !important">₹ {{project.projectPrice}}</span>
+                            <span class="text-muted" style="color:crimson !important"><br> <br> {{startDate}}</span>
                         </li>
+
                         <li class="list-group-item d-flex justify-content-between lh-condensed">
                             <div>
-                                <h6 class="my-0">Project Seller</h6>
+                                <h6 class="my-0">DeadLine</h6>
+                                <br>
                             </div>
-                            <span class="text-muted" style="color:crimson !important">{{project.projectSeller}}</span>
+                            <span class="text-muted" style="color:crimson !important"><br> <br>{{deadLine}}</span>
                         </li>
                     </ul>
                 </div>
@@ -51,6 +53,7 @@
                             <td>{{project.projectID}}</td>
                         </tr>
 
+
                         <!-- <tr>
               <th scope="row">Project Category</th>
               <td>{{project.projectCategory}}</td>
@@ -68,5 +71,28 @@
             </div>
         </div>
     </div>
+    <!-- List of Lessons -->
+    <div class="col-sm-4">
+    </div>
+    <!-- <div class="col-sm-4">
+    </div> -->
+
+    <div>
+        <div class="product-detail">
+            <h5 class="product-head">Project Files</h5>
+            <table class="table" cellspacing="0" style="max-height: 28px">
+                <tbody>
+                    <tr *ngFor="let file of project.files">
+                        <a href="{{file}}">
+                            <th scope="row">Files: {{file}}</th>
+                        </a>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- <div class="col-sm-8">
+      
+    </div> -->
 </div>
 <app-add-storage [key]=key></app-add-storage>

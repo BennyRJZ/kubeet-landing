@@ -14,6 +14,9 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
 	public key: string;
 	project: Project;
 
+	public startDate;
+	public deadLine;
+
 	constructor(
 		private route: ActivatedRoute,
 		private projectService: ProjectService,
@@ -41,6 +44,10 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
 				// this.spinnerService.hide();
 				//const y = project.payload.data() as Project;
 				this.project = project.payload.data();
+				this.startDate = this.project.startDate.toDate();
+				this.deadLine = this.project.deadLine.toDate();
+
+
 				//y['$key'] = id;
 				//this.project = y;
 			},
