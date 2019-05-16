@@ -38,6 +38,7 @@ export class AddStorageComponent implements OnInit {
         let name = this.event.target.files[index].name;
         let reference = this.angularFireStorage.ref(name);
         let upload = this.angularFireStorage.upload(name, file);
+        this.arrayF = this.project.files;
         reference.getDownloadURL().subscribe(
           (URL) => {
             this.arrayF.push(URL);
