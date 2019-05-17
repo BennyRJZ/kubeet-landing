@@ -89,8 +89,13 @@
     <div>
         <div class="product-detail">
             <h5 class="product-head">Project Files</h5>
-            <table class="table" cellspacing="0" style="max-height: 28px">
+            <table class="table table-striped">
                 <tbody>
+                    <thead>
+                        <tr>
+                            <th scope="col">Link File</th>
+                        </tr>
+                    </thead>
                     <tr *ngFor="let file of project.files">
                         <a href="{{file}}">
                             <th scope="row">Files: {{file}}</th>
