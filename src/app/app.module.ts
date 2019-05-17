@@ -20,6 +20,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { FireBaseConfig } from "../environments/firebaseConfig";
 import * as firebase from 'firebase/app';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { TeamService } from './shared/services/team.service';
 
 
 /* to load and set en.json as the default application language */
@@ -48,6 +49,7 @@ providers: [
 TranslateService,
 ProjectService,
 AngularFireStorage,
+TeamService,
  {
   provide: APP_INITIALIZER,
   useFactory: setupTranslateFactory,
