@@ -38,7 +38,11 @@ export class AddStorageComponent implements OnInit {
         let name = this.event.target.files[index].name;
         let reference = this.angularFireStorage.ref(name);
         let upload = this.angularFireStorage.upload(name, file);
-        this.arrayF = this.project.files;
+        if (this.project.files === undefined) {
+          this.arrayF = [];
+        } else {
+          this.arrayF = this.project.files;
+        }
         reference.getDownloadURL().subscribe(
           (URL) => {
             this.arrayF.push(URL);
@@ -61,7 +65,6 @@ export class AddStorageComponent implements OnInit {
     fileForm.value['category'] = this.project.category;
     fileForm.value['startDate'] = this.project.startDate;
     fileForm.value['deadLine'] = this.project.deadLine;
-    fileForm.value['team'] = this.project.team;
     fileForm.value['files'] = this.arrayF;
     console.log(this.key);
     console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");

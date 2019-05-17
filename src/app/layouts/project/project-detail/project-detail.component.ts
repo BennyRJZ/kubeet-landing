@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ProjectService } from '../../../shared/services/project.service';
 import { ToastrService } from 'src/app/shared/services/toastr.service';
 import { AuthService } from '../../../shared/services/auth.service';
+import { TeamService } from '../../../shared/services/team.service';
+import { Team } from '../../../shared/models/team';
 @Component({
 	selector: 'app-project-detail',
 	templateUrl: './project-detail.component.html',
@@ -13,15 +15,19 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
 	private sub: any;
 	public key: string;
 	project: Project;
+	team: Team;
+	teams: Team[] = [];
 
 	public startDate;
 	public deadLine;
+
 
 	constructor(
 		private route: ActivatedRoute,
 		private projectService: ProjectService,
 		private toastrService: ToastrService,
 		public authService: AuthService,
+		public teamService: TeamService,
 	) {
 		this.project = new Project();
 	}
@@ -31,6 +37,7 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
 			const id = params['id']; // (+) converts string 'id' to a number
 			this.key = params['id'];
 			this.getProjectDetail(id);
+			this.getAllTeams(id);
 		});
 	}
 
@@ -44,8 +51,8 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
 				// this.spinnerService.hide();
 				//const y = project.payload.data() as Project;
 				this.project = project.payload.data();
-				this.startDate = this.project.startDate.toDate();
-				this.deadLine = this.project.deadLine.toDate();
+				this.startDate = this.project.startDate;
+				this.deadLine = this.project.deadLine;
 
 
 				//y['$key'] = id;
@@ -56,6 +63,24 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
 			}
 		);
 	}
+	getAllTeams(id: string){
+		const less = this.teamService.getTeams(id);
+	
+		less.snapshotChanges().subscribe(
+		  (team) => {
+			this.teams = [];
+			for (let i=0; i<team.length; i++){
+			  this.team = team[i].payload.doc.data();
+			  this.team.$key = team[i].payload.doc.id;
+			  this.teams.push(this.team);
+			}
+			
+		  },
+		  (error) => {
+			this.toastrService.error('Error while fetching Teams', error);
+		  }
+		)
+		}
 
 	/* addToCart(project: Project) {
 		this.projectService.addToCart(project);

@@ -9,6 +9,15 @@
             </div>
         </div>
     </div>
+    <div class="row" *ngIf="authService.isAdmin()">
+        <div class="col-sm">
+            <div class="float-right">
+                <button type="button" class="btn btn-green waves-light" data-toggle="modal" data-target="#exampleModalLang">
+                  Add Team
+                </button>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-sm-4">
             <div class="project-image">
@@ -21,7 +30,7 @@
                             <div>
                                 <h6 class="my-0">Start Date:</h6>
                             </div>
-                            <span class="text-muted" style="color:crimson !important"><br> <br> {{startDate}}</span>
+                            <span class="text-muted" style="color:crimson !important">{{startDate}}</span>
                         </li>
 
                         <li class="list-group-item d-flex justify-content-between lh-condensed">
@@ -29,7 +38,7 @@
                                 <h6 class="my-0">DeadLine</h6>
                                 <br>
                             </div>
-                            <span class="text-muted" style="color:crimson !important"><br> <br>{{deadLine}}</span>
+                            <span class="text-muted" style="color:crimson !important">{{deadLine}}</span>
                         </li>
                     </ul>
                 </div>
@@ -91,8 +100,21 @@
             </table>
         </div>
     </div>
+    <div>
+        <div class="product-detail">
+            <h5 class="product-head">Project Teams</h5>
+            <table class="table" cellspacing="0" style="max-height: 28px">
+                <tbody>
+                    <tr *ngFor="let team of teams">
+                        {{team.name}}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
     <!-- <div class="col-sm-8">
       
     </div> -->
 </div>
 <app-add-storage [key]=key></app-add-storage>
+<app-add-team [key]=key></app-add-team>
