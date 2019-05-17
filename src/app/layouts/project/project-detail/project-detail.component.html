@@ -103,14 +103,23 @@
     <div>
         <div class="product-detail">
             <h5 class="product-head">Project Teams</h5>
-            <table class="table" cellspacing="0" style="max-height: 28px">
-                <tbody>
-                    <tr *ngFor="let team of teams">
-                        {{team.name}}
-                    </tr>
-                </tbody>
-            </table>
         </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Team Name</th>
+                    <th scope="col">Team Description</th>
+                    <th scope="col">Team Specialty</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let team of teams">
+                    <th scope="col">{{team.name}}</th>
+                    <th scope="col">{{team.description}}</th>
+                    <th scope="col">{{team.specialty}}</th>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <!-- <div class="col-sm-8">
       
