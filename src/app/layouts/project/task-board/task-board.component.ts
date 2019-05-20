@@ -48,6 +48,9 @@ export class TaskActivitiesComponent implements OnInit {
 
   sortTask() {
       var index = 0;
+      this.inProgress = [];
+      this.completed = [];
+      this.todo = [];
       this.taskList.forEach(task => {
         const boardId: string = task["boardId"];
         // Pushing Task to board based on boardId
@@ -58,6 +61,9 @@ export class TaskActivitiesComponent implements OnInit {
           case "IK_COMPLETED":
             this.completed.push(task);
             break;
+          case "IK_TODO":
+          this.todo.push(task);
+          break;
           default:
             this.todo.push(task);
             break;

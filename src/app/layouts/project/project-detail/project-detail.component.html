@@ -124,12 +124,21 @@
                     <th scope="col">{{team.specialty}}</th>
                 </tr>
             </tbody>
+
         </table>
     </div>
     <!-- <div class="col-sm-8">
       
     </div> -->
 </div>
+<div class="float-right">
+    <button type="button" class="btn btn-purple waves-light" data-toggle="modal" data-target="#exampleModalLeng">
+      Add Task
+    </button>
+</div>
+<br>
+<br>
 <app-add-storage [key]=key></app-add-storage>
 <app-add-team [key]=key></app-add-team>
 <app-task-board [key]=key></app-task-board>
+<app-add-task [key]=key></app-add-task>

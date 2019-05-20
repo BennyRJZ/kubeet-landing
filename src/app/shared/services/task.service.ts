@@ -20,7 +20,9 @@ export class TaskService {
   getTasks(key: string) {
     this.tasks = this.db.collection('projects').doc(key).collection('tasks');
     return this.tasks;
-    
   }
+  createTask(keyProjects, data: Task) {
+		return this.db.collection("projects").doc(keyProjects).collection('tasks').add(data);
+	}
 
 }
