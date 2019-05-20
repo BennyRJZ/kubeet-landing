@@ -19,6 +19,15 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-sm">
+            <div class="float-right">
+                <button type="button" class="btn btn-success waves-light" data-toggle="modal" data-target="#editProject">
+          Edit Project
+        </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-sm-4">
             <div class="project-image">
                 <div class="view hm-zoom z-depth-2" style="cursor: pointer">
@@ -142,3 +151,4 @@
 <app-add-team [key]=key></app-add-team>
 <app-task-board [key]=key></app-task-board>
 <app-add-task [key]=key></app-add-task>
+<app-edit-project [key]=key [id]=id></app-edit-project>
