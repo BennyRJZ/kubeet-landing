@@ -19,42 +19,42 @@
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="category">Task Status</label>
-                            <!-- <input type="text" class="form-control" id="category" name="category" [(ngModel)]="project.category" placeholder="Project Category" value="" required>
-                            <div class="invalid-feedback">
-                                Valid category is required.
-                            </div> -->
-                            <select name="boardId" id="boardId" [(ngModel)]="task.boardId">
-                                <option value ="IK_COMPLETED">Completed</option>
-                                <option value ="IK_PROGRESS">In Progress</option>
-                                <option value ="IK_TODO">To Do</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 mb-3">
                             <label for="category">Task Description</label>
                             <input type="text" class="form-control" id="description" name="description" [(ngModel)]="task.description" placeholder="Task Description" value="" required>
                             <div class="invalid-feedback">
                                 Valid category is required.
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="taskName">Task Name</label>
-                                <input type="text" class="form-control" id="name" name="name" [(ngModel)]="task.name" placeholder="Task Specialty" value="" required>
-                                <div class="invalid-feedback">
-                                    Valid task name is requiered.
-                                </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="taskName">Task Name</label>
+                            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="task.name" placeholder="Task Specialty" value="" required>
+                            <div class="invalid-feedback">
+                                Valid task name is requiered.
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="startDate">Start Date</label>
-                                <input type="date" class="form-control" id="startDate" name="startDate" [(ngModel)]="task.startDate" placeholder="Task Start Date" value="" required>
+                        <div class="col-md-6 mb-3">
+                            <label for="category">Task   Status : </label>
+                            <!-- <input type="text" class="form-control" id="category" name="category" [(ngModel)]="project.category" placeholder="Project Category" value="" required>
                                 <div class="invalid-feedback">
-                                    Valid Start Date is required.
-                                </div>
+                                    Valid category is required.
+                                </div> -->
+                            <select name="boardId" id="boardId" [(ngModel)]="task.boardId">
+                                    <option value ="IK_COMPLETED">Completed</option>
+                                    <option value ="IK_PROGRESS">In Progress</option>
+                                    <option value ="IK_TODO">To Do</option>
+                                </select>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="startDate">Start Date</label>
+                            <input type="date" class="form-control" id="startDate" name="startDate" [(ngModel)]="task.startDate" placeholder="Task Start Date" value="" required>
+                            <div class="invalid-feedback">
+                                Valid Start Date is required.
                             </div>
                         </div>
                     </div>
-
 
                     <!--                     <div class="mb-3">
                       <label for="taskDescription">Task Description

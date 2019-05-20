@@ -9,4 +9,5 @@ export class Task{
     isDraggable: true;
     name: string;
     startDate: Date;
+    isVisible: boolean;
 }
