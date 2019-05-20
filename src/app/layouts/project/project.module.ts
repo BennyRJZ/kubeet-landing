@@ -20,6 +20,7 @@ import { AddTeamComponent } from './add-team/add-team.component';
 // import { FavouriteProjectsComponent } from "./favourite-projects/favourite-projects.component";
 // import { CartProjectsComponent } from "./cart-projects/cart-projects.component";
 // import { CartCalculatorComponent } from "./cart-calculator/cart-calculator.component";
+import { TaskActivitiesComponent } from './task-board/task-board.component';
 
 @NgModule({
 	imports: [CommonModule, RouterModule.forChild(ProjectRoutes), SharedModule, /* CheckoutModule */],
@@ -31,6 +32,7 @@ import { AddTeamComponent } from './add-team/add-team.component';
 		ProjectDetailComponent,
 		AddStorageComponent,
 		AddTeamComponent,
+		TaskActivitiesComponent,
 		// FavouriteProjectsComponent,
 		// CartProjectsComponent,
 		// CartCalculatorComponent

@@ -21,7 +21,8 @@ import { FireBaseConfig } from "../environments/firebaseConfig";
 import * as firebase from 'firebase/app';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { TeamService } from './shared/services/team.service';
-
+import { TaskActivitiesComponent } from './layouts/project/task-board/task-board.component';
+import { TaskService } from './shared/services/task.service';
 
 /* to load and set en.json as the default application language */
 export function setupTranslateFactory(service: TranslateService): Function {
@@ -50,6 +51,7 @@ TranslateService,
 ProjectService,
 AngularFireStorage,
 TeamService,
+TaskService,
  {
   provide: APP_INITIALIZER,
   useFactory: setupTranslateFactory,

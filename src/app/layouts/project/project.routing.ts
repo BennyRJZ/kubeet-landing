@@ -32,7 +32,8 @@ export const ProjectRoutes: Routes = [
 			{
 				path: 'project/:id',
 				component: ProjectDetailComponent
-			}
+			},
+			
 		]
 	}
 ];
