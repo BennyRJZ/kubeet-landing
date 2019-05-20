@@ -15,19 +15,22 @@
                 </div>
                 <div cdkDropList id="todoList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="['inProgressList']" class="example-list" (cdkDropListDropped)="drop($event)">
                     <div class="card example-box" *ngFor="let item of todo" cdkDrag (click)="onSelect(item)">
-                        <div class="card-body">
-                            <div class="d-flex flex-row bd-highlight3">
-                                <div class="bd-highlight">
-                                    <h6 class="card-subtitle mb-2 text-muted">{{item.name}}</h6>
+                        <div *ngIf="item.isVisible">
+                            <div class="card-body">
+                                <div class="d-flex flex-row bd-highlight3">
+                                    <div class="bd-highlight">
+                                        <h6 class="card-subtitle mb-2 text-muted">{{item.name}}</h6>
+                                    </div>
+                                    <div class="bd-highlight ml-auto edit-icon">
+                                        <a href="javascript:;;"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    </div>
+                                    <div class="bd-highlight ml-auto fa fa-trash-icon"></div>
                                 </div>
-                                <div class="bd-highlight ml-auto edit-icon">
-                                    <a href="javascript:;;"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                            <!-- <p class="card-text">{{cards.description}}.</p> -->
-                            <p style="font-size: 12px">Created: <span style="color: gray">{{item.createdOn | momentTimeAgo}}</span></p>
-                            <span style="color: gray" *ngFor="let assignie of item.assignies"><img src="https://www.shareicon.net/download/2015/09/18/103157_man_512x512.png"
+                                <!-- <p class="card-text">{{cards.description}}.</p> -->
+                                <p style="font-size: 12px">Created: <span style="color: gray">{{item.createdOn | momentTimeAgo}}</span></p>
+                                <span style="color: gray" *ngFor="let assignie of item.assignies"><img src="https://www.shareicon.net/download/2015/09/18/103157_man_512x512.png"
                   [alt]="assignie.userId" width="40px" height="40px"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -45,20 +48,22 @@
 
                 <div cdkDropList id="inProgressList" [cdkDropListData]="inProgress" [cdkDropListConnectedTo]="['todoList', 'completedList']" class="example-list" (cdkDropListDropped)="drop($event)">
                     <div class="card example-box" *ngFor="let item of inProgress" (click)="onSelect(item)" cdkDrag>
-                        <div class="card-body">
-                            <div class="d-flex flex-row bd-highlight3">
-                                <div class="bd-highlight">
-                                    <h6 class="card-subtitle mb-2 text-muted">{{item.name}}</h6>
+                        <div *ngIf="item.isVisible">
+                            <div class="card-body">
+                                <div class="d-flex flex-row bd-highlight3">
+                                    <div class="bd-highlight">
+                                        <h6 class="card-subtitle mb-2 text-muted">{{item.name}}</h6>
+                                    </div>
+                                    <div class="bd-highlight ml-auto edit-icon">
+                                        <a href="javascript:;;"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    </div>
                                 </div>
-                                <div class="bd-highlight ml-auto edit-icon">
-                                    <a href="javascript:;;"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                            <!-- <p class="card-text">{{cards.description}}.</p> -->
-                            <p style="font-size: 12px">Created: <span style="color: gray">{{item.createdOn
+                                <!-- <p class="card-text">{{cards.description}}.</p> -->
+                                <p style="font-size: 12px">Created: <span style="color: gray">{{item.createdOn
                   | momentTimeAgo}}</span></p>
-                            <span style="color: gray" *ngFor="let assignie of item.assignies"><img src="https://www.shareicon.net/download/2015/09/18/103157_man_512x512.png"
+                                <span style="color: gray" *ngFor="let assignie of item.assignies"><img src="https://www.shareicon.net/download/2015/09/18/103157_man_512x512.png"
                   [alt]="assignie.userId" width="40px" height="40px"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -76,20 +81,22 @@
 
                 <div cdkDropList id="completedList" [cdkDropListData]="completed" [cdkDropListConnectedTo]="['inProgressList']" class="example-list" (cdkDropListDropped)="drop($event)">
                     <div class="card example-box" *ngFor="let item of completed" (click)="onSelect(item)" cdkDrag>
-                        <div class="card-body">
-                            <div class="d-flex flex-row bd-highlight3">
-                                <div class="bd-highlight">
-                                    <h6 class="card-subtitle mb-2 text-muted">{{item.name}}</h6>
+                        <div *ngIf="item.isVisible">
+                            <div class="card-body">
+                                <div class="d-flex flex-row bd-highlight3">
+                                    <div class="bd-highlight">
+                                        <h6 class="card-subtitle mb-2 text-muted">{{item.name}}</h6>
+                                    </div>
+                                    <div class="bd-highlight ml-auto edit-icon">
+                                        <a href="javascript:;;"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    </div>
                                 </div>
-                                <div class="bd-highlight ml-auto edit-icon">
-                                    <a href="javascript:;;"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                            <!-- <p class="card-text">{{cards.description}}.</p> -->
-                            <p style="font-size: 12px">Created: <span style="color: gray">{{item.createdOn
+                                <!-- <p class="card-text">{{cards.description}}.</p> -->
+                                <p style="font-size: 12px">Created: <span style="color: gray">{{item.createdOn
                   | momentTimeAgo}}</span></p>
-                            <span style="color: gray" *ngFor="let assignie of item.assignies"><img src="https://www.shareicon.net/download/2015/09/18/103157_man_512x512.png"
+                                <span style="color: gray" *ngFor="let assignie of item.assignies"><img src="https://www.shareicon.net/download/2015/09/18/103157_man_512x512.png"
                   [alt]="assignie.userId" width="40px" height="40px"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
