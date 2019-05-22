@@ -59,7 +59,7 @@
                                         <div class="card-footer">
                                             <span class="center">
                     
-                        <a placement="top" mdbTooltip="Remove Project" container="body" *ngIf="authService.isAdmin()"
+                        <a placement="top" mdbTooltip="Remove Project" container="body" 
                           (click)="removeProject(project.$key)">
                           <i class="fa fa-trash"></i>
                         </a>
@@ -86,3 +86,9 @@
     </div>
 </div>
 <app-add-project></app-add-project>
+
+<!-- <div *ngIf="isMyProfile" class="float-right">
+    <button type="button" class="btn btn-sm bg-white text-dark round-btn" ngbTooltip="Cancel Participation" (click)="cancelTournamentParticipation( item.tournament.id )">
+<i class="fa fa-ban"></i>
+</button>
+</div> -->

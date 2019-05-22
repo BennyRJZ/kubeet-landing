@@ -47,10 +47,10 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
     console.log("id " + id);
     x.snapshotChanges().subscribe(
       project => {
-        console.log("project" + project);
         this.project = project.payload.data();
         this.startDate = this.project.startDate;
         this.deadLine = this.project.deadLine;
+        console.log(project);
       },
       error => {
         this.toastrService.error("Error while fetching Project Detail", error);
@@ -77,7 +77,11 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
 
   /* addToCart(project: Project) {
 		this.projectService.addToCart(project);
-	} */
+  } */
+
+  removeFile( id: number ) {
+    this.project.files.splice(id, 1);
+  }
 
   ngOnDestroy() {
     this.sub.unsubscribe();

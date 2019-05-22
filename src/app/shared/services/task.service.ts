@@ -23,6 +23,12 @@ export class TaskService {
   }
   createTask(keyProjects, data: Task) {
 		return this.db.collection("projects").doc(keyProjects).collection('tasks').add(data);
-	}
+  }
+  
+
+  updateTask(key: string, data: Task) {
+    return this.db.collection("projects").doc(key).set(data);
+  }
+
 
 }

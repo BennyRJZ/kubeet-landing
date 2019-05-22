@@ -20,10 +20,16 @@
                                 <div class="bd-highlight">
                                     <h6 class="card-subtitle mb-2 text-muted">{{item.name}}</h6>
                                 </div>
-                                <div class="bd-highlight ml-auto edit-icon">
-                                    <a href="javascript:;;"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                <div class="bd-highlight ml-auto edit-icon" data-toggle="modal" data-target="#modalEditTask">
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                 </div>
-                                <div class="bd-highlight ml-auto fa fa-trash-icon"></div>
+                                <span class="right" style="    padding-top: 26px;
+                                margin-left: 214px;
+                            ">      
+                                            <a placement="bottom" mdbTooltip="Delete File" container="body">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+                                        </span>
                             </div>
                             <!-- <p class="card-text">{{cards.description}}.</p> -->
                             <p style="font-size: 12px">Created: <span style="color: gray">{{item.createdOn | momentTimeAgo}}</span></p>
@@ -51,9 +57,16 @@
                                 <div class="bd-highlight">
                                     <h6 class="card-subtitle mb-2 text-muted">{{item.name}}</h6>
                                 </div>
-                                <div class="bd-highlight ml-auto edit-icon">
-                                    <a href="javascript:;;"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                <div class="bd-highlight ml-auto edit-icon" data-toggle="modal" data-target="#modalEditTask">
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                 </div>
+                                <span class="right" style="    padding-top: 26px;
+                                margin-left: 214px;
+                            ">      
+                                            <a placement="bottom" mdbTooltip="Delete File" container="body">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+                                        </span>
                             </div>
                             <!-- <p class="card-text">{{cards.description}}.</p> -->
                             <p style="font-size: 12px">Created: <span style="color: gray">{{item.createdOn
@@ -83,9 +96,16 @@
                                 <div class="bd-highlight">
                                     <h6 class="card-subtitle mb-2 text-muted">{{item.name}}</h6>
                                 </div>
-                                <div class="bd-highlight ml-auto edit-icon">
-                                    <a href="javascript:;;"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                <div class="bd-highlight ml-auto edit-icon" data-toggle="modal" data-target="#modalEditTask">
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                 </div>
+                                <span class="right" style="    padding-top: 26px;
+                                margin-left: 214px;
+                            ">      
+                                            <a placement="bottom" mdbTooltip="Delete File" container="body">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+                                        </span>
                             </div>
                             <!-- <p class="card-text">{{cards.description}}.</p> -->
                             <p style="font-size: 12px">Created: <span style="color: gray">{{item.createdOn
@@ -98,6 +118,66 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalEditTask" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Edit Task</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+            </div>
+            <div class="modal-body">
+                <form class="needs-validation" #addTaskForm="ngForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="id">Task ID</label>
+                            <input type="text" class="form-control" id="id" name="id" [(ngModel)]="task.id" placeholder="Task iD" value="" required>
+                            <div class="invalid-feedback">
+                                Valid task name is requiered.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="category">Task Description</label>
+                            <input type="text" class="form-control" id="description" name="description" [(ngModel)]="task.description" placeholder="Task Description" value="" required>
+                            <div class="invalid-feedback">
+                                Valid category is required.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="taskName">Task Name</label>
+                            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="task.name" placeholder="Task Specialty" value="" required>
+                            <div class="invalid-feedback">
+                                Valid task name is requiered.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="category">Task   Status : </label>
+                            <select name="boardId" id="boardId" [(ngModel)]="task.boardId">
+                                    <option value ="IK_COMPLETED">Completed</option>
+                                    <option value ="IK_PROGRESS">In Progress</option>
+                                    <option value ="IK_TODO">To Do</option>
+                                </select>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="startDate">Start Date</label>
+                            <input type="date" class="form-control" id="startDate" name="startDate" [(ngModel)]="task.startDate" placeholder="Task Start Date" value="" required>
+                            <div class="invalid-feedback">
+                                Valid Start Date is required.
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-success btn-lg btn-block" type="submit">Update Task</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
